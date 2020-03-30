@@ -1,0 +1,1326 @@
+<!DOCTYPE HTML>
+
+<html lang="zh-CN"> 
+<head>
+    <meta charset="utf-8">
+	
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta name="viewport" content="width=device-width,height=device-height,inital-scale=0.36,maximum-scale=0.36, minimum-scale=0.36, user-scalable=no;">
+
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+
+    <title>雅泰天沟报价计算器</title>
+
+    <style type="text/css">
+
+        .main {
+            margin-top: 16px;
+            margin-left: 20px;
+			padding-right: 20px;
+			/* width: 635px; */
+        }
+		
+        dl {
+            width: 712px;
+            margin: 0 auto;
+            text-align: center;
+            float: left;      
+
+        }
+
+        .origin {
+            width: 227px;
+            margin-left: 10px;
+            border-right: solid 1px #C3C8CB;
+            border-bottom: solid 1px #C3C8CB;
+
+        }
+
+        .originAmount{
+            border-bottom: solid 1px #C3C8CB;
+            border-left: solid 1px #C3C8CB;
+            border-right: solid 1px #C3C8CB;
+            width: 226px;
+            margin-left: 10px;
+            height: 68px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .originAmount p{
+            margin: 0;
+            padding: 5px;
+        }
+
+        dt {
+            clear: both;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        dd {
+            float: left;
+            width: 73px;
+            text-align: center;
+            height: 24px;
+            line-height: 24px;
+            padding: 8px 0;
+            border-top: solid 1px #C3C8CB;
+            border-left: solid 1px #C3C8CB;
+            font-size: 17px;
+            font-weight: bold;
+            margin: 0px;
+        }
+
+        .last-slide {
+            border-right: solid 1px #C3C8CB;
+            
+        }
+
+        .last-bottom {
+            border-bottom: solid 1px #C3C8CB;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 17px;
+            font-weight: bold;
+            /* background-color: #E9EEF1; */
+        }
+
+        .width-xuhao {
+            width: 65px;
+        }
+
+        .width-name {
+            width: 134px;
+        }
+
+        .width-price {
+            width: 74px;
+			
+        }
+		
+		.origin .width-price {
+            width: 104px;
+			
+        }
+		
+		.width-price input {
+			color: red;
+		}
+
+		
+		.width-total {
+            width: 121px;
+        }
+		
+		
+		.width-address {
+			width: 282px;
+		}
+
+        h1 {
+            font-size: 24px;
+        }
+
+        body, input {
+            font-family: "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif; 
+			/* font: 12px/150% Arial,Verdana,"宋体"; */
+            box-sizing: border-box;
+        }
+
+        input {
+            width: 100%;
+            font-size: 17px;
+            font-weight: bold;
+            border: none;
+            text-align: center;
+            line-height: 24px;
+			height: 24px;
+            outline: none;
+        }
+
+        .yanse {
+            float: left;
+            width: 80px;
+        }
+        .yanse-title {
+            text-align: center;
+            font-size: 16px;
+            /* background-color: #E9EEF1; */
+
+            line-height: 24px;
+            width: 80px;
+            text-align: center;
+            height: 24px;
+            padding: 6px 0;
+            border: solid 1px #C3C8CB;
+            
+            font-weight: bold;
+            margin: 0px;
+        }
+        .yanse-info {
+            width: 80px;
+            text-align: center;
+            height: 801px;
+            padding: 6px 0;
+            border: solid 1px #C3C8CB;
+            border-top: none;
+            border-bottom: none;
+            font-size: 17px;
+            font-weight: bold;
+            margin: 0px; 
+
+            position:relative;         
+        }
+
+        .yanse-info p {
+            height: 80px;
+            line-height: 26px;
+            margin: auto;  position: absolute;  top: 0; left: 0; bottom: 0; right: 0;
+        }
+
+        .total {
+            border: solid 1px #C3C8CB;
+            border-right: none;
+            transform: translateY(-1px);
+        }
+        .pannel {
+            /* width: 713px; */
+            /* width: 800px; */
+            float: left;
+			border-right: solid 1px #C3C8CB;
+
+        }
+
+        .pannel2 {
+            margin-top: 81px;
+            margin-left: 5px;
+            float: left;
+        }
+
+        .total p {
+            text-align: center;
+            font-size: 17px;
+            line-height: 24px;
+            padding: 8px 0;
+            font-weight: bold;
+            margin: 0px;
+			letter-spacing: 1px;
+        }
+		
+		.company p {
+            text-align: center;
+			margin: 0px;
+			padding: 9px 0;
+        }
+		
+		.company p input {
+			height: 24px;
+			font-size: 17px;
+			line-height: 24px;
+            font-weight: bold;
+            margin: 0px;
+			letter-spacing: 1px;
+		}
+
+
+        .calcue, .add {
+            width: 600px;
+            margin-top: 20px;
+        }
+        
+        .company {
+            /* border: solid 1px #C3C8CB; */
+            /* border-bottom: none; */
+            /* width: 713px; */
+			
+			height: 81px;
+        }
+		
+		.companyBg1 {
+			background: url(https://img.alicdn.com/imgextra/i2/1119357786/O1CN01ZH3Oyc27O2MLRmsjm_!!1119357786.jpg);
+		}
+		
+		.companyBg2 {
+			background: url(https://img.alicdn.com/imgextra/i1/1119357786/O1CN01w8tqYa27O2MLW8ctT_!!1119357786.jpg);
+		}
+		
+		.companyBg3 {
+			background: url(https://img.alicdn.com/imgextra/i4/1119357786/O1CN01VdrkNb27O2MLWgjNU_!!1119357786.jpg);
+		}
+		
+		.companyBg4 {
+			background: url(https://img.alicdn.com/imgextra/i4/1119357786/O1CN01BdXENA27O2MLEUKie_!!1119357786.jpg);
+		}
+		
+		.companyBg5 {
+			background: url(https://img.alicdn.com/imgextra/i1/1119357786/O1CN01Nfm8Vt27O2MM95K7J_!!1119357786.jpg);
+		}
+		.companyBg6 {
+			//background: url(https://img.alicdn.com/imgextra/i1/1119357786/O1CN01JelAHj27O2MM8KKO6_!!1119357786.jpg);
+			background: url(https://img.alicdn.com/imgextra/i3/1119357786/O1CN01oOZ8Z727O2MLG17oD_!!1119357786.jpg);
+		}
+		
+		
+		.footerColor1 {
+			background-color: #026d99;
+			color: white;
+		}
+		
+		.footerColor2 {
+			background-color: #338d74;
+			color: white;
+		}
+		
+		.footerColor3 {
+			background-color: #338d74;
+			color: #e7ff35;
+		}
+		
+		.footerColor4 {
+			background-color: #0171bb;
+			color: white;
+		}
+		
+		.footerColor5 {
+			background-color: #0171bb;
+			color: white;
+		}
+		.footerColor6 {
+			background-color: #0171bb;
+			color: white;
+		}
+
+		
+		
+    
+        button {
+            border-radius: 4px;
+			border: none;
+            width: 150px;
+            height: 50px;
+            margin-left: 80px;
+        
+			font-size: 17px;
+			color: #fff;
+			background-color: #1F6FB5;
+        }
+		
+		button:hover {
+			background-color: #175D9A;
+		}
+
+        
+
+ 
+        .calcue input {
+            border: solid 1px #ccc;
+            border-radius: 4px;
+            width: 204px;
+            height: 40px;
+            line-height: 30px;
+        }
+		
+		.size-select {
+			margin-top: 22px; 
+		}
+		
+		.ml80 {
+			margin-left: 80px;
+		}
+		
+		select {
+			margin-left: 6px;
+			height: 40px;
+			font-size: 17px;
+			border: solid 1px #ccc;
+            border-radius: 4px;
+		}
+		
+		.add input {
+			width: 40px;
+			border: solid 1px #ccc;
+            border-radius: 4px;
+            height: 40px;
+            line-height: 30px;
+			margin: 0 6px 0 4px;
+		}
+		
+		.add-btn {
+		margin-left: 84px;
+		background-color: #D97B4A;
+		}
+		
+		.add-btn:hover {
+		background-color: #DF6627;
+		}
+		
+		
+		.total{
+			height: 41px;
+		}
+		.total .connect-info{
+			font-size: 17px !important;
+			padding: 0 0 6px 0 !important;
+		}
+		
+		.result-cell {
+			line-height: 100%;
+			height: 100%;
+			font-size: 22px;
+			font-weight: normal;
+		}
+		
+		.cell1, .cell2, .cell3 {
+			float: left;
+			height: 41px;
+		}
+		
+		
+		
+		.cell1 {
+			width: 65px;
+			border-right:solid 1px #ccc;
+		}
+		
+		.cell2{
+			width: 653px;
+			background-color: #026d99;
+		}
+		
+		.cell3{
+			height: 24px;
+			width: 120px;
+			border-right:solid 1px #ccc;
+			border-left:solid 1px #ccc;
+			
+			text-align: center;
+			vertical-align: middle;
+			font-size: 17px;
+			font-weight: bold;
+			padding: 8px 0;
+		}
+		
+		.cell5{
+			width: 100%;
+			height: 70px;
+		}
+		
+		.phone {
+			color: blue;
+			text-decoration:underline;
+		}
+		
+		
+		
+		dl {
+            width: 996px;
+  
+        }
+		
+		.width-beizhu {
+			width: 154px;
+		}
+		
+		.width-houdu {
+			width: 104px;
+		}
+		.width-yansecell {
+			width: 84px;
+		}
+		.width-xinhao {
+			width: 104px;
+		}
+		
+		.nums {
+			color: red;
+		}
+		
+
+    </style>
+
+    <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+
+    
+</head>
+
+<body>
+
+    <div class="main">
+
+    <div class="pannel-box">
+            <div class="pannel">
+                    <div class="company companyBg6">
+                       <!-- <p><input value="铝合金檐沟雨水管订货单"></p> -->
+                    
+                    </div>
+            
+                    <dl class="sale">
+                        <dd class="title width-xuhao">序 号</dd>
+                        <dd class="title width-name">产 品 名 称</dd>
+						<dd class="title width-xinhao">型号</dd>
+						<dd class="title width-houdu">厚度</dd>
+						<dd class="title width-yansecell">颜色</dd>
+						
+                        <dd class="title">单 位</dd>
+                        <dd class="title">数量</dd>
+                        <dd class="title width-price">单价</dd>
+                        <dd class="title width-total">金额（元）</dd>
+						<dd class="title width-beizhu">备 注</dd>
+
+            
+                        <dd class="width-xuhao"></dd>
+                        <dd class="width-name t-name"><input  value="精品型材檐沟"/></dd>
+						<dd class="width-xinhao t-xinghao-yangou"><input  value="7英寸"/></dd>
+						<dd class="width-houdu t-houdu-yangou"><input  value="2.0厚度"/></dd>
+						<dd class="width-yansecell t-yanse"><input  value="咖啡色"/></dd>
+                        <dd><input  value="米"/></dd>
+                        <dd><input class="nums" value="" /></dd>
+                        <dd class="width-price"><input  value="55"/></dd>
+                        <dd class="width-total price">0</dd>
+						<dd class="width-beizhu beizhu"><input  value="3米一根"/></dd>
+
+						
+						<dd class="width-xuhao"></dd>
+                        <dd class="width-name"><input  value="挡水板"/></dd>
+						<dd class="width-xinhao"><input  value=""/></dd>
+						<dd class="width-houdu"><input  value=""/></dd>
+						<dd class="width-yansecell"><input  value=""/></dd>
+                        <dd><input  value="米"/></dd>
+                        <dd><input class="nums" value="" /></dd>
+                        <dd class="width-price"><input  value="26"/></dd>
+                        <dd class="width-total price">0</dd>
+						<dd class="width-beizhu beizhu"><input  value=""/></dd>
+                        
+                        <dd class="width-xuhao"></dd>
+                        <dd class="width-name t-name2"><input  value="双吊接器"/></dd>
+						<dd class="width-xinhao"><input  value=""/></dd>
+						<dd class="width-houdu"><input  value=""/></dd>
+						<dd class="width-yansecell"><input  value=""/></dd>
+                        <dd><input  value="只"/></dd>
+                        <dd><input class="nums" value=""/></dd>
+                        <dd class="width-price"><input  value="6"/></dd>
+                        <dd class="width-total price">0</dd>
+						<dd class="width-beizhu beizhu"><input  value=""/></dd>
+                        
+                        <dd class="width-xuhao"></dd>
+                        <dd class="width-name t-name3"><input  value="压铸封盖"/></dd>
+						<dd class="width-xinhao"><input  value=""/></dd>
+						<dd class="width-houdu"><input  value=""/></dd>
+						<dd class="width-yansecell"><input  value=""/></dd>
+                        <dd><input  value="对"/></dd>
+                        <dd><input  class="nums" value=""/></dd>
+                        <dd class="width-price"><input  value="18"/></dd>
+                        <dd class="width-total price">0</dd>
+						<dd class="width-beizhu beizhu"><input  value=""/></dd>
+                        
+                        <dd class="width-xuhao"></dd>
+                        <dd class="width-name  t-name3"><input  value="压铸卡接器"/></dd>
+						<dd class="width-xinhao"><input  value=""/></dd>
+						<dd class="width-houdu"><input  value=""/></dd>
+						<dd class="width-yansecell"><input  value=""/></dd>
+                        <dd><input  value="只"/></dd>
+                        <dd><input class="nums"  value=""/></dd>
+                        <dd class="width-price"><input  value="16"/></dd>
+                        <dd class="width-total price">0</dd>
+						<dd class="width-beizhu beizhu"><input  value=""/></dd>
+                            
+                        <dd class="width-xuhao"></dd>
+                        <dd class="width-name  t-name3"><input  value="压铸90°阳角"/></dd>
+						<dd class="width-xinhao"><input  value=""/></dd>
+						<dd class="width-houdu"><input  value=""/></dd>
+						<dd class="width-yansecell"><input  value=""/></dd>
+                        <dd><input  value="只"/></dd>
+                        <dd><input  class="nums" value=""/></dd>
+                        <dd class="width-price"><input  value="32"/></dd>
+                        <dd class="width-total price">0</dd>
+						<dd class="width-beizhu beizhu"><input  value=""/></dd>
+            
+                        <dd class="width-xuhao"></dd>
+                        <dd class="width-name  t-name3"><input  value="压铸90°阴角"/></dd>
+						<dd class="width-xinhao"><input  value=""/></dd>
+						<dd class="width-houdu"><input  value=""/></dd>
+						<dd class="width-yansecell"><input  value=""/></dd>
+                        <dd><input  value="只"/></dd>
+                        <dd><input  class="nums" value=""/></dd>
+                        <dd class="width-price"><input  value="32"/></dd>
+                        <dd class="width-total price">0</dd>
+						<dd class="width-beizhu beizhu"><input  value=""/></dd>
+                        
+                        <dd class="width-xuhao"></dd>
+                        <dd class="width-name  t-name3"><input  value="压铸135°阳角"/></dd>
+						<dd class="width-xinhao"><input  value=""/></dd>
+						<dd class="width-houdu"><input  value=""/></dd>
+						<dd class="width-yansecell"><input  value=""/></dd>
+                        <dd><input  value="只"/></dd>
+                        <dd><input  class="nums" value=""/></dd>
+                        <dd class="width-price"><input  value="35"/></dd>
+                        <dd class="width-total price">0</dd>
+						<dd class="width-beizhu beizhu"><input  value=""/></dd>
+            
+                        <dd class="width-xuhao"></dd>
+                        <dd class="width-name  t-name3"><input  value="压铸135°阴角"/></dd>
+						<dd class="width-xinhao"><input  value=""/></dd>
+						<dd class="width-houdu"><input  value=""/></dd>
+						<dd class="width-yansecell"><input  value=""/></dd>
+                        <dd><input  value="只"/></dd>
+                        <dd><input  class="nums" value=""/></dd>
+                        <dd class="width-price"><input  value="35"/></dd>
+                        <dd class="width-total price">0</dd>
+						<dd class="width-beizhu beizhu"><input  value=""/></dd>
+                        
+                        <dd class="width-xuhao"></dd>
+                        <dd class="width-name y-name"><input  value="雨水管"/></dd>
+						<dd class="width-xinhao t-xinhao-shuiguang"><input  value="80*60"/></dd>
+						<dd class="width-houdu t-houdu-shuiguang"><input  value="1.0厚度"/></dd>
+						<dd class="width-yansecell t-yanse"><input  value="咖啡色"/></dd>
+                        <dd><input  value="米"/></dd>
+                        <dd><input class="nums"  value=""/></dd>
+                        <dd class="width-price"><input  value="20"/></dd>
+                        <dd class="width-total price">0</dd>
+						<dd class="width-beizhu beizhu"><input  value="3米一根"/></dd>
+                        
+                        <dd class="width-xuhao"></dd>
+                        <dd class="width-name"><input  value="接口器"/></dd>
+						<dd class="width-xinhao"><input  value=""/></dd>
+						<dd class="width-houdu"><input  value=""/></dd>
+						<dd class="width-yansecell"><input  value=""/></dd>
+                        <dd><input  value="只"/></dd>
+                        <dd><input class="nums"  value=""/></dd>
+                        <dd class="width-price"><input  value="11"/></dd>
+                        <dd class="width-total price">0</dd>
+						<dd class="width-beizhu beizhu"><input  value=""/></dd>
+                        
+                        
+                        <dd class="width-xuhao"></dd>
+                        <dd class="width-name"><input  value="管卡"/></dd>
+						<dd class="width-xinhao"><input  value=""/></dd>
+						<dd class="width-houdu"><input  value=""/></dd>
+						<dd class="width-yansecell"><input  value=""/></dd>
+                        <dd><input  value="只"/></dd>
+                        <dd><input class="nums"  value=""/></dd>
+                        <dd class="width-price"><input  value="4"/></dd>
+                        <dd class="width-total price">0</dd>
+						<dd class="width-beizhu beizhu"><input  value=""/></dd>
+                        
+                        <dd class="width-xuhao"></dd>
+                        <dd class="width-name"><input  value="下水器"/></dd>
+						<dd class="width-xinhao"><input  value=""/></dd>
+						<dd class="width-houdu"><input  value=""/></dd>
+						<dd class="width-yansecell"><input  value=""/></dd>
+                        <dd><input  value="只"/></dd>
+                        <dd><input  class="nums" value=""/></dd>
+                        <dd class="width-price"><input  value="5"/></dd>
+                        <dd class="width-total price">0</dd>
+						<dd class="width-beizhu beizhu"><input  value=""/></dd>
+            
+                        <dd class="width-xuhao"></dd>
+                        <dd class="width-name"><input  value="65°正弯"/></dd>
+						<dd class="width-xinhao"><input  value=""/></dd>
+						<dd class="width-houdu"><input  value=""/></dd>
+						<dd class="width-yansecell"><input  value=""/></dd>
+                        <dd><input  value="只"/></dd>
+                        <dd><input  class="nums" value=""/></dd>
+                        <dd class="width-price"><input  value="12"/></dd>
+                        <dd class="width-total price">0</dd>
+						<dd class="width-beizhu beizhu"><input  value=""/></dd>
+                        
+                        <dd class="width-xuhao"></dd>
+                        <dd class="width-name"><input  value="65°侧弯"/></dd>
+						<dd class="width-xinhao"><input  value=""/></dd>
+						<dd class="width-houdu"><input  value=""/></dd>
+						<dd class="width-yansecell"><input  value=""/></dd>
+                        <dd><input  value="只"/></dd>
+                        <dd><input  class="nums" value=""/></dd>
+                        <dd class="width-price"><input  value="12"/></dd>
+                        <dd class="width-total price">0</dd>
+						<dd class="width-beizhu beizhu"><input  value=""/></dd>
+            
+                        <dd class="width-xuhao"></dd>
+                        <dd class="width-name"><input  value="90°正弯"/></dd>
+						<dd class="width-xinhao"><input  value=""/></dd>
+						<dd class="width-houdu"><input  value=""/></dd>
+						<dd class="width-yansecell"><input  value=""/></dd>
+                        <dd><input  value="只"/></dd>
+                        <dd><input  class="nums" value=""/></dd>
+                        <dd class="width-price"><input  value="12"/></dd>
+                        <dd class="width-total price">0</dd>
+						<dd class="width-beizhu beizhu"><input  value=""/></dd>
+                        
+                        <dd class="width-xuhao"></dd>
+                        <dd class="width-name"><input  value="90°侧弯"/></dd>
+						<dd class="width-xinhao"><input  value=""/></dd>
+						<dd class="width-houdu"><input  value=""/></dd>
+						<dd class="width-yansecell"><input  value=""/></dd>
+                        <dd><input  value="只"/></dd>
+                        <dd><input class="nums"  value=""/></dd>
+                        <dd class="width-price"><input  value="12"/></dd>
+                        <dd class="width-total price">0</dd>
+						<dd class="width-beizhu beizhu"><input  value=""/></dd>
+            
+                        <dd class="width-xuhao"></dd>
+                        <dd class="width-name"><input  value="雨水斗"/></dd>
+						<dd class="width-xinhao"><input  value=""/></dd>
+						<dd class="width-houdu"><input  value=""/></dd>
+						<dd class="width-yansecell"><input  value=""/></dd>
+                        <dd><input  value="只"/></dd>
+                        <dd><input  class="nums" value=""/></dd>
+                        <dd class="width-price"><input  value="58"/></dd>
+                        <dd class="width-total price">0</dd>
+						<dd class="width-beizhu beizhu"><input  value=""/></dd>
+            
+                        <dd class="width-xuhao"></dd>
+                        <dd class="width-name"><input  value="斜三通"/></dd>
+						<dd class="width-xinhao"><input  value=""/></dd>
+						<dd class="width-houdu"><input  value=""/></dd>
+						<dd class="width-yansecell"><input  value=""/></dd>
+                        <dd><input  value="只"/></dd>
+                        <dd><input class="nums"  value=""/></dd>
+                        <dd class="width-price"><input  value="17"/></dd>
+                        <dd class="width-total price">0</dd>
+						<dd class="width-beizhu beizhu"><input  value=""/></dd>
+                        
+                        <dd class="width-xuhao"></dd>
+                        <dd class="width-name"><input  value="螺丝膨胀管"/></dd>
+						<dd class="width-xinhao"><input  value=""/></dd>
+						<dd class="width-houdu"><input  value=""/></dd>
+						<dd class="width-yansecell"><input  value=""/></dd>
+                        <dd><input  value="套"/></dd>
+                        <dd><input class="nums"  value=""/></dd>
+                        <dd class="width-price"><input  value="0.3"/></dd>
+                        <dd class="width-total price">0</dd>
+						<dd class="width-beizhu beizhu"><input  value=""/></dd>
+                        
+                        <dd class="width-xuhao"></dd>
+                        <dd class="width-name"><input  value="结构胶"/></dd>
+						<dd class="width-xinhao"><input  value=""/></dd>
+						<dd class="width-houdu"><input  value=""/></dd>
+						<dd class="width-yansecell"><input  value=""/></dd>
+                        <dd><input  value="支"/></dd>
+                        <dd><input class="nums"  value=""/></dd>
+                        <dd class="width-price"><input  value="25"/></dd>
+                        <dd class="width-total price">0</dd>
+						<dd class="width-beizhu beizhu"><input  value=""/></dd>
+                        
+                        <dd class="width-xuhao"></dd>
+                        <dd class="width-name"><input  value="铆钉"/></dd>
+						<dd class="width-xinhao"><input  value=""/></dd>
+						<dd class="width-houdu"><input  value=""/></dd>
+						<dd class="width-yansecell"><input  value=""/></dd>
+                        <dd><input  value="只"/></dd>
+                        <dd><input class="nums"  value=""/></dd>
+                        <dd class="width-price"><input  value="0.1"/></dd>
+                        <dd class="width-total price">0</dd>
+						<dd class="width-beizhu beizhu"><input  value=""/></dd>
+                        
+						
+						
+                        <dd class="width-xuhao"></dd>
+                        <dd class="width-name"><input  value="运 费"/></dd>
+						<dd class="width-xinhao"><input  value=""/></dd>
+						<dd class="width-houdu"><input  value=""/></dd>
+						<dd class="width-yansecell"><input  value=""/></dd>
+                        <dd><input  value=""/></dd>
+                        <dd><input  value=""/></dd>
+                        <dd class="width-price"><input  value=""/></dd>
+                        <dd class="width-total price" isYunFei= true><input  value="0"/></dd>
+						<dd class="width-beizhu"><input  value=""/></dd>
+						
+                    </dl>
+            
+					<!--
+                    <div class="yanse">
+                        <div class="yanse-title">颜色</div>
+                        <div class="yanse-info"><p>咖<br/>啡<br/>色</p></div>
+                    </div>
+					-->
+            
+                    <div class="clearfix"></div>
+					
+					<!--
+                    <div class="total">
+						<div class="cell1">
+							
+						</div>
+						<div class="cell2">
+							<input class="result-cell" value="（此价格不含税 合计：）"/>
+						</div>
+						<div class="cell3">
+							
+						</div>
+						<div class="cell4">
+							
+						</div>
+                    </div> 
+					-->
+					
+					<div class="footer">
+						<div class="cell5">
+							<input id="footer"class="result-cell footerColor6" value="（此价格不含税 合计：）"/>
+
+						</div>
+					
+                    </div> 
+                </div>
+            
+            
+                <div class="pannel2">
+                    <dl class="origin">
+                            <dd class="title width-price">出厂单价</dd>
+                            <dd class="title width-total">出厂金额（元）</dd>
+                            <!-- 13: ["天沟精品7寸型材2.3厚", 46.6, 4, 14, 10, 26, 26, 26,26] -->
+                
+                            <dd class="width-price"><input  value="46.60"/></dd>
+                            <dd class="width-total price" index= 1>0</dd>
+							
+							<dd class="width-price"><input  value="19.00"/></dd>
+                            <dd class="width-total price" index= 1>0</dd>
+                            
+                            <dd class="width-price"><input  value="4.00"/></dd>
+                            <dd class="width-total price" index= 2>0</dd>
+                            
+                            <dd class="width-price"><input  value="14.00"/></dd>
+                            <dd class="width-total price" index= 3>0</dd>
+                            
+                            <dd class="width-price"><input  value="10.00"/></dd>
+                            <dd class="width-total price" index= 4>0</dd>
+                                
+                            <dd class="width-price"><input  value="26.00"/></dd>
+                            <dd class="width-total price" index= 5>0</dd>
+                
+                            
+                            <dd class="width-price"><input  value="26.00"/></dd>
+                            <dd class="width-total price" index= 6>0</dd>
+                            
+                            
+                            <dd class="width-price"><input  value="26.00"/></dd>
+                            <dd class="width-total price" index= 7>0</dd>
+                
+                            
+                            <dd class="width-price"><input  value="26.00"/></dd>
+                            <dd class="width-total price" index= 8>0</dd>
+                            
+                            <!-- 2: ["雨水管80x60", 15, 5.5, 1.4, 2.3, 6.3, 6.3, 6.3,6.3, 42, 12, 0.05, 17.5, 0.05], -->
+                
+                            <dd class="width-price"><input  value="15.00"/></dd>
+                            <dd class="width-total price" index= 9>0</dd>
+                            
+                        
+                            <dd class="width-price"><input  value="5.50"/></dd>
+                            <dd class="width-total price" index= 10>0</dd>
+                            
+                            
+                            
+                            <dd class="width-price"><input  value="1.40"/></dd>
+                            <dd class="width-total price" index= 11>0</dd>
+                            
+                            
+                            <dd class="width-price"><input  value="2.30"/></dd>
+                            <dd class="width-total price" index= 12>0</dd>
+                
+                            
+                            <dd class="width-price"><input  value="6.30"/></dd>
+                            <dd class="width-total price" index= 13>0</dd>
+                            
+                            
+                            <dd class="width-price"><input  value="6.30"/></dd>
+                            <dd class="width-total price" index= 14>0</dd>
+                
+                            
+                            <dd class="width-price"><input  value="6.30"/></dd>
+                            <dd class="width-total price" index= 15>0</dd>
+                            
+                            
+                            <dd class="width-price"><input  value="6.30"/></dd>
+                            <dd class="width-total price" index= 16>0</dd>
+                
+                            
+                            <dd class="width-price"><input  value="42.00"/></dd>
+                            <dd class="width-total price" index= 17>0</dd>
+                
+                            
+                            <dd class="width-price"><input  value="12.00"/></dd>
+                            <dd class="width-total price" index= 18>0</dd>
+                            
+                            
+                            <dd class="width-price"><input  value="0.05"/></dd>
+                            <dd class="width-total price" index= 19>0</dd>
+                            
+                            
+                            <dd class="width-price"><input  value="17.50"/></dd>
+                            <dd class="width-total price" index= 20>0</dd>
+                            
+                            
+                            <dd class="width-price"><input  value="0.05"/></dd>
+                            <dd class="width-total price" index= 21>0</dd>
+							
+							
+                            <dd class="width-price" isYunFei= true><input  value="运费"/></dd>
+                            <dd class="width-total price" index= 22>0</dd>
+							
+                        </dl>
+                        <div class="clearfix"></div>
+                        <div class="originAmount">
+                            <p class="zongjia">出厂总价</p>
+                            <p class="lirun">利润</p>
+                        </div>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <div class="operate-box">
+                <div class="size-select">
+                        <span>天沟尺寸</span>
+                                <select id="tSelect">
+                                    <!-- <option value ="1">5寸0.8厚</option> -->
+                                    <option value ="2">6寸0.8厚</option>
+                                    <option value="3">7寸0.8厚</option>
+                                    <!-- <option value="4">8寸0.8厚</option> -->
+                                    <option value ="5">5寸1.0厚</option>
+                                    <option value ="6">6寸1.0厚</option>
+                                    <option value ="7">7寸1.0厚</option>
+                                    <option value ="8">8寸1.0厚</option>
+                                    <option value ="9">5寸2.0厚</option>
+                                    <option value ="10">6寸2.0厚</option>
+                                    <option value ="11">7寸2.0厚</option>
+                                    <option value ="12">8寸2.0厚</option>
+                                    <option value ="13" selected = "selected">精品型材7寸2.3厚</option>
+									<option value ="14">5寸1.2厚</option>
+                                    <option value ="15">6寸1.2厚</option>
+                                    <option value ="16">7寸1.2厚</option>
+                                    <option value ="17">8寸1.2厚</option>
+									<option value ="18">5寸1.5厚</option>
+                                    <option value ="19">6寸1.5厚</option>
+                                    <option value ="20">7寸1.5厚</option>
+                                    <option value ="21">8寸1.5厚</option>
+                                </select>
+                        
+                                
+                        <span class="ml80">雨水管尺寸</span>		
+                                <select id="ySelect">
+                                    <option value ="1">80*50 1.0厚</option>
+                                    <option value ="2" selected = "selected">80*60 1.0厚</option>
+                                    <option value="3">80*100 1.0厚</option>
+									<option value="6">80*60 1.2厚</option>
+                                    <option value="7">80*100 1.2厚</option>
+                                    <option value="4">75圆</option>
+                                    <option value="5">100圆</option>
+									
+                                </select>
+								
+								<span class="ml80">表格样式</span>		
+                                <select id="colorSelect">
+									<option value ="6">蓝底白字带图标</option>
+									<option value ="4">蓝底白字带雅泰</option>
+                                  
+                                    <option value ="2">绿底白字</option>
+									<option value ="3">绿底黄字</option>
+									<option value ="1">蓝底白字</option>
+									
+								
+                                </select>
+                    </div>
+                    
+                    <div class="calcue">
+                            <input type="text" value="咖啡色">
+                            <button class="calcue-btn">计算</button>
+                    </div>
+                    
+                        <div class="add">
+                        <span>在第</span>
+                            <input id="add-place" type="text" value=""><span>行后，添加一行</span>
+                            <button class="add-btn">添加</button>
+                    </div>
+            
+                </div>
+    </div>
+    
+    
+
+</div>
+
+<script type="text/javascript">
+	document.oncontextmenu = function(){return false};
+
+	// 天沟 挡水板 吊接器 封盖 卡接器 90阳角 90阴角 135阳角 135阴角
+	var tPriceList = {
+		1: ["天沟5英寸0.8厚", 22, 16, 3.5, 11, 6, 16, 16,16,16],
+		2: ["天沟6英寸0.8厚", 22.5, 16, 3.5, 12, 6, 17, 17,17,17],
+		3: ["天沟7英寸0.8厚", 23, 16, 4, 13, 8, 18, 18,18,18],
+		4: ["天沟8英寸0.8厚", 32, 16, 5, 13, 9,25, 25,25,25],
+		5: ["天沟5英寸1.0厚", 25.5, 16, 3.5, 11, 6, 16, 16,16,16],
+		6: ["天沟6英寸1.0厚", 26, 16, 3.5, 12, 6, 17, 17,17,17],
+		7: ["天沟7英寸1.0厚", 27.5, 16, 4, 13, 8, 18, 18,18,18],
+		8: ["天沟8英寸1.0厚", 35, 16,5, 13, 9, 25, 25,25,25],
+		9: ["天沟5英寸2.0厚", 47, 26, 3.5, 11, 6, 35, 35,35,35],
+		10: ["天沟6英寸2.0厚", 55, 26, 3.5, 12, 6, 36, 36,36,36],
+		11: ["天沟7英寸2.0厚", 58, 26, 4, 13, 8, 39, 39,39,39],
+		12: ["天沟8英寸2.0厚", 68, 26, 5, 13, 9, 46, 46,46,46],
+		13: ["天沟精品7寸型材2.3厚", 55, 26, 6, 18, 16, 32, 32, 35,35],
+		
+		14: ["天沟5英寸1.2厚", 33, 16, 3.5, 11, 6, 22, 22,22,22],
+		15: ["天沟6英寸1.2厚", 34, 16, 3.5, 12, 6, 23, 23,23,23],
+		16: ["天沟7英寸1.2厚", 36, 16, 4, 13, 8, 26, 26,26,26],
+		17: ["天沟8英寸1.2厚", 44, 16, 5, 13, 9, 30, 30,30,30],
+		18: ["天沟5英寸1.5厚", 38, 26, 3.5, 11, 6, 27, 27,27,27],
+		19: ["天沟6英寸1.5厚", 42, 26, 3.5, 12, 6, 28, 28,28,28],
+		20: ["天沟7英寸1.5厚", 46, 26, 4, 13, 8, 29, 29,29,29],
+		21: ["天沟8英寸1.5厚", 55, 26, 5, 13, 9, 34, 34,34,34],
+		
+    };
+    
+    //出厂价
+    // 天沟 挡水板 吊接器 封盖 卡接器 90阳角 90阴角 135阳角 135阴角
+    var tPriceListOrigin = {
+		1: ["天沟5英寸0.8厚", 17.5, 11, 1.4, 5, 3, 12, 12,12,12],
+		2: ["天沟6英寸0.8厚", 18.5, 11, 1.4, 5, 3, 12.5, 12.5,12.5,12.5],
+		3: ["天沟7英寸0.8厚", 19, 11, 1.5, 5.5, 3.5, 14, 14,14,14],
+		4: ["天沟8英寸0.8厚", 27, 11, 2, 6, 5, 17.5, 17.5,17.5,17.5],
+		5: ["天沟5英寸1.0厚", 21.5, 11,  1.4, 5, 3, 12, 12,12,12],
+		6: ["天沟6英寸1.0厚", 22, 11, 1.4, 5, 3, 12.5, 12.5,12.5,12.5],
+		7: ["天沟7英寸1.0厚", 23.5, 11,  1.5, 5.5, 3.5, 14, 14,14,14],
+		8: ["天沟8英寸1.0厚", 31, 11, 2, 6, 5, 17.5, 17.5,17.5,17.5],
+		9: ["天沟5英寸2.0厚", 39.5, 19, 1.4, 5, 3, 29, 29,29,29],
+		10: ["天沟6英寸2.0厚", 45.5, 19, 1.4, 5, 3, 30, 30,30,30],
+		11: ["天沟7英寸2.0厚", 49.2, 19, 1.5, 5.5, 3.5, 33, 33,33,33],
+		12: ["天沟8英寸2.0厚", 57.5, 19, 2, 6, 5, 39, 39,39,39],
+		13: ["天沟精品7寸型材2.3厚", 46.6, 19, 4, 14, 10, 26, 26, 26,26],
+		
+		14: ["天沟5英寸1.2厚", 29, 11, 1.4, 5, 3, 18, 18,18,18],
+		15: ["天沟6英寸1.2厚", 30, 11, 1.4, 5, 3, 19, 19,19,19],
+		16: ["天沟7英寸1.2厚", 32, 11, 1.5, 5.5, 3.5, 22, 22,22,22],
+		17: ["天沟8英寸1.2厚", 39.5, 11, 2, 6, 5, 26, 26,26,26],
+		18: ["天沟5英寸1.5厚", 32.8, 19, 1.4, 5, 3, 23, 23,23,23],
+		19: ["天沟6英寸1.5厚", 36.5, 19, 1.4, 5, 3, 24, 24,24,24],
+		20: ["天沟7英寸1.5厚", 39.5, 19, 1.5, 5.5, 3.5, 25, 25,25,25],
+		21: ["天沟8英寸1.5厚", 46, 19, 2, 6, 5, 30, 30,30,30]
+		
+	};
+	
+	
+	// 雨水管 接口器 管卡 下水器 65正弯头 65侧弯 90正弯 90侧弯 雨水斗 斜三通 膨胀管 结构胶 
+	var yPriceList = {
+		1: ["雨水管80*50 1.0厚", 19, 9, 4, 5, 11, 11, 11, 11, 58, 16, 0.3, 25],
+		2: ["雨水管80*60 1.0厚", 20, 11, 4, 5, 12, 12, 12,12, 58, 17, 0.3, 25],
+		3: ["雨水管80*100 1.0厚", 24, 11, 5, 5, 13, 13, 13,13, 65, 22, 0.3, 25],
+		4: ["雨水管75圆 1.0厚", 22, 11, 6, 5, 13, 13, 13, 13, 58, 18, 0.3, 25],
+		5: ["雨水管100圆 1.0厚", 26, 13, 13, 6, 15, 15, 15, 15, 65, 24, 0.3, 25],
+		6: ["雨水管80*60 1.2厚", 27, 11, 4, 5, 12, 12, 12,12, 58, 17, 0.3, 25],
+		7: ["雨水管80*100 1.2厚", 32, 11, 5, 5, 13, 13, 13,13, 65, 22, 0.3, 25],
+    };
+    
+    //出厂价
+    // 雨水管 接口器 管卡 下水器 65正弯头 65侧弯 90正弯 90侧弯 雨水斗 斜三通 膨胀管 结构胶 铆钉
+    var yPriceListOrigin = {
+		1: ["雨水管80*50 1.0厚", 14, 4, 1.3, 2.2, 5.5, 5.5, 5.8, 5.8, 42, 11, 0.05, 17.5, 0.05],
+		2: ["雨水管80*60 1.0厚", 15, 5.5, 1.4, 2.3, 6.3, 6.3, 6.3,6.3, 42, 12, 0.05, 17.5, 0.05],
+		3: ["雨水管80*100 1.0厚", 18, 6, 1.6, 3, 8, 8, 8.2,8.2, 42, 16, 0.05, 17.5, 0.05],
+		4: ["雨水管75圆 1.0厚", 14.8, 5.5, 3.8, 2.3, 6.8, 6.8, 7, 7, 42, 12.5, 0.05, 17.5, 0.05],
+		5: ["雨水管100圆 1.0厚", 18.5, 6.3, 6.5, 3, 8.8, 9, 9, 9, 42, 17, 0.05, 17.5, 0.05],
+		6: ["雨水管80*60 1.2厚", 22, 5.5, 1.4, 2.3, 6.3, 6.3, 6.3,6.3, 42, 12, 0.05, 17.5, 0.05],
+		7: ["雨水管80*100 1.2厚", 27, 6, 1.6, 3, 8, 8, 8.2,8.2, 42, 16, 0.05, 17.5, 0.05],
+	};
+	
+	var reSetXuHao = function(){
+		var index = 0;
+		$(".width-xuhao").each(function(){
+			if(index != 0){
+				$(this).text(index.toString());
+			}
+			
+			index++;
+				           
+        });
+
+        $(".origin .price").each(function(index){
+            $(this).attr("index", index+1);
+        });
+
+   };
+
+	window.onload = reSetXuHao;
+   
+   //天沟尺寸选择下拉框
+    $("#tSelect").change(function(){  
+		var value = $("#tSelect").val();
+	
+		//$(".t-name").children().val(tPriceList[value][0]);
+		
+		if(value === "13"){
+			$(".t-xinghao-yangou").children().val("7英寸");
+			$(".t-houdu-yangou").children().val("2.0厚度");
+			$(".t-name").children().val("精品型材檐沟");
+			
+			var old = $(".t-name2").children().val();
+			$(".t-name2").children().val("双"+old);
+			
+			$(".t-name3").children().each(function(){
+				var old2 = $(this).val();
+				$(this).val("压铸"+old2);
+			});
+			
+		}else{
+			//天沟8英寸1.5厚
+			$(".t-xinghao-yangou").children().val(tPriceList[value][0].substring(2,5));
+			$(".t-houdu-yangou").children().val(tPriceList[value][0].substring(5,8) + "厚度");
+			$(".t-name").children().val("檐沟");
+			
+			var old = $(".t-name2").children().val();
+			var index = old.indexOf("双");
+			if( index != -1){
+				old = old.substr(index+1, old.length);
+				$(".t-name2").children().val(old);
+			}
+			
+			$(".t-name3").children().each(function(){
+				old = $(this).val();
+				index = old.indexOf("压铸");
+				if( index != -1){
+					old = old.substr(index+2, old.length);
+					$(this).val(old);
+				}
+			});
+		}
+		
+		var index = 1;
+		$(".sale .price").each(function(){
+			if (index < 10) {
+				$(this).prev().children().val(tPriceList[value][index].toFixed(1));
+			}		
+			index++;
+            
+        });
+
+        var index2 = 1;
+		$(".origin .price").each(function(){
+			if (index2 < 10) {
+				$(this).prev().children().val(tPriceListOrigin[value][index2].toFixed(1));
+			}		
+			index2++;
+            
+        });
+	
+	})
+	
+	//雨水管尺寸选择下拉框
+	$("#ySelect").change(function(){  
+		var value = $("#ySelect").val();
+		//$(".y-name").children().val(yPriceList[value][0]);
+		
+		//雨水管80*50 1.0厚
+		var emptyKeyIndex = yPriceList[value][0].indexOf(" ");
+		$(".t-xinhao-shuiguang").children().val(yPriceList[value][0].substring(3, emptyKeyIndex));
+		$(".t-houdu-shuiguang").children().val(yPriceList[value][0].substring(emptyKeyIndex+1) + "度");
+		$(".y-name").children().val("雨水管");
+		
+		var index = 1;
+		$(".sale .price").each(function(){
+			if (index >= 10 && index < 22) {
+                console.log(index)
+				$(this).prev().children().val(yPriceList[value][index-9].toFixed(1));
+			}
+			
+			index++;
+      
+        });
+
+        var index2 = 1;
+		$(".origin .price").each(function(){
+			if (index2 >= 10 && index2 < 22) {
+				$(this).prev().children().val(yPriceListOrigin[value][index2-9].toFixed(1));
+			}
+			
+			index2++;
+      
+        });
+	
+    })
+	
+	//表格样式选择下拉框
+	$("#colorSelect").change(function(){  
+		var value = $("#colorSelect").val();
+		var index = 1;
+		
+		for(index = 1;index <= 6; index++){
+			if(index === parseInt(value)) {
+				$("#footer").addClass("footerColor" + index);
+				$(".company").addClass("companyBg" + index);
+			}else{
+				$("#footer").removeClass("footerColor" + index);
+				$(".company").removeClass("companyBg" + index);
+			}
+		}
+    })
+
+    $(".calcue-btn").on("click", function() {
+        var amount = 0;
+        var amountOrigin = 0;
+        var index = 1;
+		
+		var hasSetDate = false;
+
+        var removeIndexArr = []
+        $(".sale .price").each(function(listIndex){
+            var price = $(this).prev().children().val();
+            var num = $(this).prev().prev().children().val();
+
+            priceFloat = parseFloat(price);
+            numInt = parseFloat(num);
+            var total = priceFloat * numInt;
+
+            //处理原价列表
+            removeIndexArr.push(listIndex)
+            var priceOrigin = $(".origin .price[index=" + (listIndex+1) + "]").prev().children().val();
+            priceFloatOrigin = parseFloat(priceOrigin);
+            var totalOrigin = priceFloatOrigin * numInt;
+
+			
+            if (!isNaN(numInt) && !isNaN(priceFloat) && numInt > 0 ){
+                amount += total;
+                $(this).text(total.toFixed(1));
+				$(this).prev().children().val(priceFloat.toFixed(1));
+                //$(this).prev().prev().prev().prev().prev().text(index.toString());
+			
+			
+				if(!hasSetDate){
+					if($(this).next().children().val() === ""){
+						var nowDate = new Date();
+						var year = nowDate.getFullYear();
+						 var month = nowDate.getMonth() + 1;
+						 var day = nowDate.getDate();
+						 var dateStr = year + "年" + month + "月" + day +"日";
+						$(this).next().children().val(dateStr);
+						hasSetDate = true;
+					}
+				}
+				
+                amountOrigin += totalOrigin;
+                $(".origin .price[index=" + (listIndex+1) + "]").text(totalOrigin.toFixed(1));
+                $(".origin .price[index=" + (listIndex+1) + "]").prev().children().val(priceFloatOrigin.toFixed(1));
+                
+				index++;
+            } else {
+				if ($(this).attr("isYunFei") == "true") {
+					var yunFei = $(this).children().val();
+					var yunFeiInt = parseInt(yunFei);
+					
+					if (!isNaN(yunFeiInt) && yunFeiInt > 0 ){
+                        amount += yunFeiInt;
+                        amountOrigin += yunFeiInt;
+                        $(".origin .price[index=" + (listIndex+1) + "]").text(yunFei); 
+						//$(this).prev().prev().prev().text(index.toString());
+						index++;
+						return true;
+					}
+					
+					for (i = 0; i < 8; i++) {
+						$(this).prev().remove();
+					}
+					$(this).next().remove();
+                    $(this).remove();
+
+                    $(".origin .price[index=" + (listIndex+1) + "]").prev().remove();
+                    $(".origin .price[index=" + (listIndex+1) + "]").remove(); 
+                    	
+				} else {
+					for (i = 0; i < 8; i++) {
+						$(this).prev().remove();
+					}
+					$(this).next().remove();
+                    $(this).remove();
+
+                    $(".origin .price[index=" + (listIndex+1) + "]").prev().remove();
+                    $(".origin .price[index=" + (listIndex+1) + "]").remove();               
+				}
+            }           
+        });
+
+        
+        var height = $("dl").height();
+        $(".yanse-info").height(height - 50);
+
+        // $(".total input").val("总价 " + amount.toFixed(1) + " 元（不含税票）");
+		//$(".total .cell3").text(amount);
+		
+		//					<input class="result-cell" value="（此价格不含税 合计：）"/>
+		$(".result-cell").val("此价格不含税  合计： " + amount + " 元");
+		
+        $(".zongjia").text("出厂总价 " + amountOrigin.toFixed(1));
+        var lirun = amount - amountOrigin
+        $(".lirun").text("利润 " + lirun.toFixed(1) + " 利润比 " + (lirun * 100 /amount).toFixed(1) + '%');
+        
+
+		//颜色
+        var color = $(".calcue input").val();
+		
+		$(".t-yanse").children().val(color);
+		
+		var colorHtml = "";
+		for (i = 0; i < color.length; i ++) {
+			colorHtml += color.charAt(i);
+			colorHtml += "<br>";
+		}
+
+        $(".yanse-info p").html(colorHtml);
+        
+        reSetXuHao();
+    });
+	
+	$(".add-btn").on("click", function() {
+        var amount = 0;
+        var index = 1;
+        $(".beizhu").each(function(){
+			var addPlace = $("#add-place").val();
+			var addPlaceInt = parseInt(addPlace);
+			
+			if (index == addPlaceInt) {
+				$(this).after(`<dd class="width-xuhao"></dd>
+				<dd class="width-name"><input  value=""/></dd>
+				<dd class="width-xinhao"><input  value=""/></dd>
+				<dd class="width-houdu"><input  value=""/></dd>
+				<dd class="width-yansecell"><input  value=""/></dd>
+				<dd><input  value="只"/></dd>
+				<dd><input  class="nums" value=""/></dd>
+				<dd class="width-price"><input  value=""/></dd>
+				<dd class="width-total price"></dd>
+				<dd class="width-beizhu beizhu"><input  value=""/></dd>`)
+				
+				var height = $(".yanse-info").height();
+				$(".yanse-info").height(height + 37);
+				
+				
+				return false;
+			
+			}		
+			index++;    
+        });
+
+        var index2 = 1
+        $(".origin .price").each(function(){
+			var addPlace = $("#add-place").val();
+			var addPlaceInt = parseInt(addPlace);
+			
+			if (index2 == addPlaceInt) {
+				$(this).after(`<dd class="width-price"><input  value=""/></dd>
+				<dd class="width-total price"></dd>`)	
+				return false;
+
+			}		
+			index2++;    
+        });
+
+        reSetXuHao();
+
+
+
+    });
+</script>
+</body>
+
+</html>
